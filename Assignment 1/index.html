@@ -1,0 +1,59 @@
+
+<html>
+  <head>
+      <title>Holiday List</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div id = "main">
+      <div id = "dateform">
+        <form id = "choosedate" onsubmit = "filterList();;return false">
+          <h3>Which date would you like to filter?</h3>
+          <label for="start"></label>
+        <input type="date" id="start" name="trip-start">
+        <button type=  "button" id = "today" onclick="getPrevDate(0,0)">Today</button>
+        <button type=  "button" id = "yesterday" onclick="getPrevDate(1,0)">Yesterday</button>
+        <button type=  "button" id = "lastweek" onclick="getPrevDate(7,0)">Last Week</button>
+        <button type=  "button" id = "lastmonth" onclick="getPrevDate(0,1)">Last Month</button>
+        </br> </br>
+        <input type = "submit" id = "submit">
+        </form>
+      </div>
+    <div id = "holidaylist">
+      <h2>Holiday List</h2>
+      <div class = 'list' id = "list">
+        
+      </div> 
+    </div>
+  </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type = "text/javascript" src = "index.js"> </script>
+
+      <script>
+        let today = new Date().toISOString().slice(0, 10)
+        //document.getElementById("start").value = today
+         getPrevDate = (days, months) => {
+          var today = new Date();
+          var prevDate = new Date(today.getFullYear(), today.getMonth() - months, today.getDate() - days);
+          console.log(prevDate)
+          document.getElementById('start').value = prevDate.toISOString().slice(0, 10)
+        }
+      </script>
+      <style>
+      h1 {text-align: center;}
+        p {text-align: center;}
+      div {text-align: center;}
+      h2 {text-align: center;}
+      table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+      </style>
+  </body>
+</html>
