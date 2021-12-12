@@ -10,7 +10,7 @@ const fetchData = () => {
   });
 }
 
-async function filterList () {
+var filterList = async() => {
   //event.preventDefault()
   console.log('Smit')
   let select = document.getElementById('start').value
@@ -30,7 +30,7 @@ async function filterList () {
   showList(data)
   }
 
-function showList(data) {
+var showList = (data) => {
   console.log(data)
   var listDiv = document.getElementById('list');
   //listDiv.innerHTML = '';
@@ -51,7 +51,7 @@ function showList(data) {
   
 }
 
-async function showAll() {
+var showAll = async() => {
   var parsedData = await fetchData();
   console.log(parsedData)
   showList(parsedData);
