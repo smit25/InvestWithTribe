@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongourl = 'your mongo db url'
+const mongourl = 'mongodb+srv://smit25:m3gw8Dyh@cluster0.jg5wa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 var mongoServer = async () => {
   try {

@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer')
 const router = express.Router()
 
 var User = require('../model/user')
-const senderMail = 'enteremail@gmail.com'
-const senderPasswd = 'your password'
+const senderMail = 'smitu3435@gmail.com'
+const senderPasswd = 'impact25'
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -86,13 +86,13 @@ router.post('/signup',
       // sending email
       
       var mailOptions = {
-          from: 'enteremail@gmail.com',
+          from: senderMail,
           to: user.email,
           subject: 'Sending Email using Node.js',
           text: 'Assignment 2 Complete'
         };
 
-        transporter.sendMail(mailOptions, function(error, info){
+        transporter.sendMail(mailOptions, function(err, info){
           if (err) {
             console.log(err);
           } else {
