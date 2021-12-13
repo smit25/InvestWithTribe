@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer')
 const router = express.Router()
 
 var User = require('../model/user')
-const senderMail = 'smitu3435@gmail.com'
-const senderPasswd = 'impact25'
+const senderMail = ''
+const senderPasswd = ''
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
